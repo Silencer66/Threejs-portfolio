@@ -1,4 +1,4 @@
-import { carouselSlice } from "@/features/Carousel/model/slice/carouselSlice";
+import { carouselSlice } from "@/entities/Carousel/model/slice/carouselSlice";
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
