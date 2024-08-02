@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICarousel } from "../types/carouselSchema";
 
-import image1 from "../../../../../public/images/carousel1.jpg"; 
-import image2 from "../../../../../public/images/carousel2.jpg"; 
-import image3 from "../../../../../public/images/carousel3.jpg"; 
+import image1 from "../../../../../public/images/carousel1.jpg";
+import image2 from "../../../../../public/images/carousel2.jpg";
+import image3 from "../../../../../public/images/carousel3.jpg";
 
 const initialState: ICarousel = {
     currentId: 1,
@@ -28,6 +28,9 @@ export const carouselSlice = createSlice({
             if (state.items.some((x) => x.id === previousId)) {
                 state.currentId = previousId;
             }
+        },
+        changeCurrentId: (state, action: PayloadAction<number>) => {
+            state.currentId = action.payload;
         },
     },
 });
